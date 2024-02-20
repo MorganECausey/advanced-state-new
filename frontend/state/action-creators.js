@@ -10,15 +10,11 @@ RESET_FORM
 } from "./action-types"
 
 export function moveClockwise(currentPosition) {
-  return(
-    {type: MOVE_CLOCKWISE, payload: currentPosition}
-  )
+  return{type: MOVE_CLOCKWISE, payload: currentPosition}
 }
 
 export function moveCounterClockwise(currentPosition) {
-  return(
-    {type: MOVE_COUNTERCLOCKWISE, payload: currentPosition}
-  );
+  return{type: MOVE_COUNTERCLOCKWISE, payload: currentPosition}
 }
 
 export function selectAnswer(id) {

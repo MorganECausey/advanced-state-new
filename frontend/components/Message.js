@@ -6,8 +6,8 @@ function Message(props) {
 }
 const mapStateToProps = state => {
   return {
-    message: state.infoMessage
+    message: state.infoMessage,
   }
 }
 
-export default connect(mapStateToProps, {})(Message);
+export default connect(mapStateToProps, {})(Message)

@@ -9,6 +9,8 @@ import { combineReducers } from 'redux'
   INPUT_CHANGE,
   RESET_FORM
   } from './action-types'
+
+  
 const initialWheelState = 0
 export const wheel =(state = initialWheelState, action) => {
   switch (action.type) {
@@ -22,7 +24,7 @@ export const wheel =(state = initialWheelState, action) => {
   if(action.payload === 0) {
     return(5)
   } else {
-    return(action.payload -1)
+    return(action.payload - 1)
   }
   default:
     return(state);
@@ -34,7 +36,7 @@ function quiz(state = initialQuizState, action) {
     case(SET_QUIZ_INTO_STATE):
     return(action.payload);
     default:
-      return state
+      return(state);
   }
 }
 
@@ -45,7 +47,7 @@ function selectedAnswer(state = initialSelectedAnswerState, action) {
     console.log(action.payload)
     return(action.payload)
     default:
-      return (state)
+      return(state);
   }
 }
 
@@ -55,7 +57,7 @@ function infoMessage(state = initialMessageState, action) {
     case(SET_INFO_MESSAGE):
     return(action.payload)
     default: 
-    return (state)
+    return(state);
   }
 }
 
@@ -67,9 +69,9 @@ const initialFormState = {
 function form(state = initialFormState, action) {
   switch(action.type) {
     case(INPUT_CHANGE):
-    return({...state, [action.payload[0]]: action.payload[1]});
+    return({...state, [action.payload[0]]: action.payload[1]})
     case(RESET_FORM):
-    return initialFormState;
+    return(initialFormState);
   default:
   return (state);
 }

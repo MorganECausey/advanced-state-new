@@ -22,7 +22,7 @@ function Quiz(props) {
               })}
             </div>
 
-            <button id="submitAnswerBtn" onClick={() => props.postAnswer(props.quizState.quiz_id, props.selectedAnswerState)} disabled={!props.selectedAnswerState}>Submit answer</button>
+            <button id="submitAnswerBtn" disabled={!props.selectedAnswerState} onClick={() => props.postAnswer(props.quizState.quiz_id, props.selectedAnswerState)}>Submit answer</button>
           </>
         ) : <div>
           {props.fetchQuiz()}
@@ -35,8 +35,8 @@ function Quiz(props) {
 
 const mapStateToProps = state => {
   return {
+    selectedAnswerState: state.selectedAnswer,
     quizState: state.quiz,
-    selectedAnswerState: state.selectAnswer
   }
 }
 
