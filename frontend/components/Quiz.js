@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchQuiz, selectAnswer, postAnswer } from '../state/action-creators'
+import { fetchQuiz, selectAnswer, postAnswer } from '../state/action-creators';
 
 function Quiz(props) {
   return (
@@ -13,9 +13,10 @@ function Quiz(props) {
 
             <div id="quizAnswers">
               {props.quizState.answers.map(n => {
-                return <div className={props.selectedAnswerState === n.answer_id ? 'answer selected' : 'answer'} key={n.answer_id}>{n.text}
-                <button onClick={() => {props.selectAnswer(n.answer_id)}}>
-                  {props.selectedAnswerState === n.answer_id ? 'SELECTED' : 'select'}
+                return <div className={props.selectedAnswerState === n.answer_id ? "answer selected" : "answer"} 
+                key={n.answer_id}>{n.text}
+                <button onClick={() => props.selectAnswer(n.answer_id)}>
+                  {props.selectedAnswerState === n.answer_id ? "SELECTED" : "select"}
                 </button>
               </div>
               })}

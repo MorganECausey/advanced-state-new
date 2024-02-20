@@ -18,7 +18,7 @@ export function moveClockwise(currentPosition) {
 export function moveCounterClockwise(currentPosition) {
   return(
     {type: MOVE_COUNTERCLOCKWISE, payload: currentPosition}
-  )
+  );
 }
 
 export function selectAnswer(id) {
@@ -55,7 +55,7 @@ export const fetchQuiz = () => dispatch => {
   }
 
 export const postAnswer = (quizId, answerId) => dispatch => {
-  const finalAnswer ={quiz_id: quizId, answer_id:answerId}
+  const finalAnswer ={quiz_id: quizId, answer_id: answerId}
   axios.post(`http://localhost:9000/api/quiz/answer`, finalAnswer)
   .then(res => {
     dispatch(selectAnswer(null))
